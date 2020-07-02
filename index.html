@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Writing App</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Writing App</h1>
+        <p>Una app para escribir texto SEO a medida</p>
+      </header>
+      <section class="select">
+        <form id="form-select">
+          <div class="form-group">
+            <label for="heading">Heading: </label>
+            <textarea
+              type="text"
+              id="heading"
+              name="heading"
+              maxlength="70"
+              rows="1"
+              oninput="countWords(this.value, 'span-heading')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >El título del artículo. Max: 8-10 words. <br />
+              Word Count:<span class="span-heading"></span></span
+            ><br />
+          </div>
+          <div class="form-group">
+            <label for="tags" class="tags">3 Tags comma separated: </label>
+            <textarea type="textarea" id="tags" name="tags" rows="1"></textarea
+            ><br />
+          </div>
+          <div class="form-group">
+            <label for="intro">Intro: </label>
+            <textarea
+              type="text"
+              name="intro"
+              id="intro"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-intro')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Intro. Max: 200 caracteres. Include intro to inform why users
+              should take this road trip; what's included in the guide. <br />
+              Word Count:<span class="span-intro"></span
+            ></span>
+          </div>
+          <div class="form-group">
+            <label for="section-heading" class="section-heading"
+              >Section Heading:
+            </label>
+            <textarea
+              type="text"
+              name="section-heading"
+              id="section-heading"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-section-heading')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Intro. Max: 1-5 words. Miami or Day 1 - Miami. <br />
+              <strong
+                >Word Count: <span class="span-section-heading"></span></strong
+            ></span>
+          </div>
+          <div class="form-group">
+            <label for="section-description" class="section-description"
+              >Section Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="section-description"
+              id="section-description"
+              maxlength="400"
+              rows="4"
+              oninput="countWords(this.value, 'span-section-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Description. Max: 65 words. Add a short note describing the
+              section or a directional element (highway, roads you vill traverse
+              during this section, etc) <br />
+              <strong
+                >Word Count:
+                <span class="span-section-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 1 Title -->
+          <div class="form-group">
+            <label for="poi1-title" class="poi1-title"
+              >Point of Interest 1 Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi1-title"
+              id="poi1-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-poi1-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Ttle. Max: 1-5 words. Use
+              <a href="https://foursquare.com/city-guide" target="_blank"
+                >Foursquare</a
+              >
+              for this one. <br />
+              <strong>Word Count: <span class="span-poi1-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 1 Description -->
+          <div class="form-group">
+            <label for="poi1-description" class="poi1-description"
+              >Point of Interest 1 Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi1-description"
+              id="poi1-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-poi1-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Description. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-poi1-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 2 Title -->
+          <div class="form-group">
+            <label for="poi2-title" class="poi2-title"
+              >Point of Interest 2 Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi2-title"
+              id="poi2-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-poi2-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Ttle. Max: 1-5 words. Use
+              <a href="https://foursquare.com/city-guide" target="_blank"
+                >Foursquare</a
+              >
+              for this one. <br />
+              <strong>Word Count: <span class="span-poi2-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 2 Description -->
+          <div class="form-group">
+            <label for="poi2-description" class="poi2-description"
+              >Point of Interest 2 Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi2-description"
+              id="poi2-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-poi2-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Description. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-poi2-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 3 Title -->
+          <div class="form-group">
+            <label for="poi3-title" class="poi3-title"
+              >Point of Interest 3 Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi3-title"
+              id="poi3-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-poi3-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Ttle. Max: 1-5 words. Use
+              <a href="https://foursquare.com/city-guide" target="_blank"
+                >Foursquare</a
+              >
+              for this one. <br />
+              <strong>Word Count: <span class="span-poi3-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- POI 3 Description -->
+          <div class="form-group">
+            <label for="poi3-description" class="poi3-description"
+              >Point of Interest 3 Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="poi3-description"
+              id="poi3-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-poi3-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Description. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-poi3-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- Resto 1 Title -->
+          <div class="form-group">
+            <label for="resto1-title" class="resto1-title"
+              >Resto 1 Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="resto1-title"
+              id="resto1-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-resto1-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Restaurant Title. Max: 1-5 words. <br />
+              <strong>Word Count: <span class="span-resto1-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- Resto 1 Description -->
+          <div class="form-group">
+            <label for="resto1-description" class="resto1-description"
+              >Resto 1 Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="resto1-description"
+              id="resto1-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-resto1-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Restaurant Description. Describe food, decoration, what makes it special. Include a TIP if you can. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-resto1-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- Resto 2 Title -->
+          <div class="form-group">
+            <label for="resto2-title" class="resto2-title"
+              >Resto 2 Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="resto2-title"
+              id="resto2-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-resto2-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Restaurant Title. Max: 1-5 words.<br />
+              <strong>Word Count: <span class="span-resto2-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- Resto 2 Description -->
+          <div class="form-group">
+            <label for="resto2-description" class="resto2-description"
+              >Resto 2 Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="resto2-description"
+              id="resto2-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-resto2-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Restaurant Description. Describe food, decoration, what makes it special. Include a TIP if you can. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-resto2-description"></span></strong
+            ></span>
+          </div>
+
+          <!-- Hotel Title -->
+          <div class="form-group">
+            <label for="hotel-title" class="hotel-title"
+              >Hotel Title:
+            </label>
+            <textarea
+              type="textarea"
+              name="hotel-title"
+              id="hotel-title"
+              maxlength="25"
+              rows="1"
+              oninput="countWords(this.value, 'span-hotel-title')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Ttle. Max: 1-5 words. Use
+              <a href="https://www.kayak.com.ar" target="_blank"
+                >Kayak</a
+              >
+              for this one. <br />
+              <strong>Word Count: <span class="span-hotel-title"></span></strong
+            ></span>
+          </div>
+
+          <!-- Hotel Description -->
+          <div class="form-group">
+            <label for="hotel-description" class="hotel-description"
+              >Hotel Description:
+            </label>
+            <textarea
+              type="textarea"
+              name="hotel-description"
+              id="hotel-description"
+              maxlength="200"
+              rows="2"
+              oninput="countWords(this.value, 'span-hotel-description')"
+            ></textarea
+            ><br />
+            <span class="small"
+              >Point of Interest Description. Max: 25 words.
+              <strong></strong>
+                <br />
+                Word Count: <span class="span-hotel-description"></span></strong
+            ></span>
+          </div>
+
+          <div id="buttons" class="form-group">
+            <button type="submit" value="Submit" class="submit">Enviar</button>
+
+            <button type="reset" value="Reset" class="reset">Borrar</button>
+          </div>
+        </form>
+      </section> <br><br><br><br><br>
+      
+      <div id="text">
+       
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
